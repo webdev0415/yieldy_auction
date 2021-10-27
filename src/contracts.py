@@ -229,7 +229,9 @@ def approval_program():
 
 
 def clear_state_program():
-    return Approve()
+    program = Return(Int(1))
+    return compileTeal(program, Mode.Application, version=3)
+    # return Approve()
 
 
 if __name__ == "__main__":

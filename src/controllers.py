@@ -23,12 +23,6 @@ def createNonFungibleToken():
   # an accounts dict.
   print("--------------------------------------------")
   print("Creating account...")
-  accounts = {}
-  m = create_account()
-  accounts[1] = {}
-  accounts[1]['pk'] = mnemonic.to_public_key(m)
-  accounts[1]['sk'] = mnemonic.to_private_key(m)
-
 
 client = getAlgodClient()
   print("--------------------------------------------")
