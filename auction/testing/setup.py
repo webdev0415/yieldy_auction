@@ -3,14 +3,22 @@ from typing import Optional, List
 from algosdk.v2client.algod import AlgodClient
 from algosdk.kmd import KMDClient
 
+import os
+from dotenv import load_dotenv
+
 from ..account import Account
 
-ALGOD_ADDRESS = "http://localhost:4001"
-ALGOD_TOKEN = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+load_dotenv()
+
+BASE_SERVER=os.getenv('TESTNET_BASE_SERVER')
+INDEXER_SERVER=os.getenv('TESTNET_INDEXER_SERVER')
+# ALGOD_ADDRESS = "http://localhost:4001"
+ALGOD_TOKEN = os.getenv('PURESTAKE_KEY')
 
 
 def getAlgodClient() -> AlgodClient:
-    return AlgodClient(ALGOD_TOKEN, ALGOD_ADDRESS)
+    algoClient = new algosdk.Algodv2(token, baseServer, port);
+    return AlgodClient(ALGOD_TOKEN, BASE_SERVER)
 
 
 KMD_ADDRESS = "http://localhost:4002"

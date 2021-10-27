@@ -179,6 +179,9 @@ def setupAuctionApp(
 
     waitForTransaction(client, signedFundAppTxn.get_txid())
 
+# def buyAsset(client: AlgodClient, appID: int, sender: Account, receiver: Account, price: int, nftID: int, nftAmount: int,) -> None:
+#     appAddr = get_application_address(appID)
+#     appGlobalState = getAppGlobalState(client, appID)
 
 def placeBid(client: AlgodClient, appID: int, bidder: Account, bidAmount: int) -> None:
     """Place a bid on an active auction.
